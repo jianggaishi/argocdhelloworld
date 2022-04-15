@@ -1,0 +1,22 @@
+# helloworld-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+        - image: 192.168.145.132/default/hello0404:V6.0
+          name: helloworld
+          ports:
+            - containerPort: 80
+
+
